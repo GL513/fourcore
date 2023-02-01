@@ -1,205 +1,330 @@
-.logo {
-    width: 24px;
+@font-face {
+    font-family: "Directors Gothic";
+    src: url('assets/fonts/directorsgothic.woff') format('woff');
+  }
+
+html, body {
+    margin: 0;
+}
+
+body {
+    background-image: url('assets/img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navigation {
+    width: fit-content;
+    height: 48px;
+    z-index: 1000;
+    background-color: white;  
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(200, 200, 200, .7);;
+    border-radius: 48px;
+    margin: 12px auto;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #4e4e4e;
+}
+
+.navigation img {
+    width: 48px;
     height: auto;
-	margin: 20px;
-	image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-}
-
-.sidebar {
-    width: 256px;
-    height: 100%;
-    background-color: rgb(16,16,16);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.menuimg {
-    float: left;
-	width: 24px;
-	height: auto;
-    margin: 0px 20px 0px 20px;
-	image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
-}
-
-.statscontainer {
-    background-color: rgb(22,22,22);
-    width: 40vw;
-    height: fit-content;
     border-radius: 8px;
+    margin: 0 6px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header ul {
+    float: right;
+    margin-top: -18px;
+}
+
+header ul li {
+    display: inline-block;
+    float: none;
+    margin: 32px 32px 0px 0px;
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a {
+    transition: 0.2s;
+}
+
+a:hover {
+    filter: brightness(50%);
+}
+
+h1 {
+    font-family: "Directors Gothic";
+    color: white;
+    font-size: 10vw;
     text-align: center;
-    margin: auto;
+    text-shadow: 5px 5px 12px rgba(200, 200, 200, .8);
 }
 
-.titlecontainer {
-    text-align: center;
-    margin: 72px auto auto auto;
-    width: 40vw;
+h3 {
+    font-family: "Source Sans Pro";
+    font-size: 16px;
+    font-weight: normal;
+    color: #4e4e4e;
 }
 
-.optioncontainer div {
-    margin-top: 40px;
-}
-
-.optioncontainer h3 {
-    font-family: 'Shippori Antique', sans-serif;
+p {
+    font-family: "Source Sans Pro";
     font-size: 14px;
-    color: rgb(247,247,247);
 }
 
-.datacontainer {
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-
-.graphcontainer {
-    background-color: rgb(22,22,22);
-    width: 40vw;
+.maincontainer {
+    width: 68vw;
+    height: fit-content;
+    margin: 12px auto;
+    padding: 3vw;
+    background-color: rgba(244, 244, 244, .6);  
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(200, 200, 200, .7);
     border-radius: 8px;
-    margin: auto;
+}
+
+.maincontainer .datacontainer {
+    display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.maincontainer .datacontainer div {
+    margin-left: 5vw;
+}
+
+.datacontainer h2 {
+    font-family: "Directors Gothic";
+    font-size: 48px;
+    font-weight: normal;
+    color: #1f1f1f;
+    margin-top: -2vh;
+}
+
+#workerlist {
+    padding: 0 12px;
+}
+
+#minerhashrate::after, #pool_hr::after, #global_hr::after {
+    content: "H/s";
+    font-size: 28px;
+}
+
+#minerworkers::after {
+    content: " ACTIVE";
+    font-size: 28px;
+}
+
+#minerpending::after, #minerrewarded::after, #minerlifetime::after {
+    content: " RTM";
+    font-size: 28px;
+}
+
+#minershares::after {
+    content: " SENT";
+    font-size: 28px;
+}
+
+.inputcontainer {
+    background-color: rgba(244, 244, 244, .6);  
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(200, 200, 200, .7);
+    border-radius: 8px;
+    width: fit-content;
+    padding: 20px;
+    margin: calc(12px + 4vw) auto;
 }
 
 input[type=text] {
-	width: 70%;
-	height: 24px;
+	width: 40vw;
+	height: 38px;
 	background-color: transparent;
 	border: 0px;
 	border-radius: 8px;
-	font-family: 'Shippori Antique', sans-serif;
-    font-size: 12px;
+	font-family: "Source Sans Pro";
+    font-size: 14px;
 	color: rgb(125,125,125);
 	vertical-align: bottom;
+    float: left;
 }
 
 input[type=text]:focus {
 	outline: none;
 }
 
+#workerlist li {
+    font-family: system-ui;
+}
+
 #minersearch {
 	background-color: transparent;
 	border: 0px;
-	padding-top: 10px;
+    transition: 0.1s;
+}
+
+#minersearch:hover {
+    filter: brightness(94%);
+}
+
+#minersearch:active {
+    filter: brightness(78%);
 }
 
 #minersearch img {
-	vertical-align: top;
-	width: 24px;
+	width: 38px;
 	height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #a1a1a1;
 }
 
-body {
-    padding-left: 256px;
-    background-color: rgb(20,20,20);
+#addresslabel {
+    font-size: 4vw;
+    margin: -8vw 0 8vw 0;
 }
 
-h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3vw;
-	font-weight: 400;
-    margin: 40px;
-    color: rgb(247,247,247);
+.graphcontainer {
+    margin: -16px auto;
+    width: 90%;
+    height: 80%;
 }
 
-h2 {
-    font-family: 'Shippori Antique', sans-serif;
-    font-size: 20px;
-    color: rgb(247,247,247);
+.largegraphcontainer {
+	margin: 22px auto;
+	width: 90%;
+	height: 30vw;
 }
 
-h3 {
-    font-family: 'Shippori Antique', sans-serif;
-    font-size: 16px;
-    color: rgb(247,247,247);
+.largegraphcontainer h3 {
+	margin-left: 24px;
 }
 
-h4 {
-    font-family: 'Shippori Antique', sans-serif;
-    font-size: 28px;
-    color: rgb(247,247,247);
+.duocontainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 12px auto;
+    width: 80vw;
+    padding: 20px;
 }
 
-p {
-    font-family: 'Shippori Antique', sans-serif;
+.duocontainer h3 {
+    margin: 24px;
+}
+
+.duocontainer .subcontainer {
+    width: 34vw;
+    height: 34vw;
+    background-color: rgba(244, 244, 244, .6);  
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(200, 200, 200, .7);
+    border-radius: 8px;
+    margin: 3vw;
+}
+
+.unknown {
+    display: block;
+    margin: 24px auto;
+    width: 64%;
+    height: auto;
+}
+
+footer {
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 16px 0;
+    font-family: "Source Sans Pro";
     font-size: 14px;
-    color: rgb(150,150,150);
+    margin-top: 24px;
 }
 
-a {
+footer h3 {
+    margin-left: 10vw;
+}
+
+footer .datacontainer {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    margin: 34px auto;
+}
+
+footer ul {
+    padding-left: 0;
+    margin-top: -10px;
+    margin-left: 10vw;
+}
+
+footer li {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #909090;
     text-decoration: none;
 }
 
-#homebtn {
-	margin: auto;
-    font-family: 'Shippori Antique', sans-serif;
-    font-weight: bold;
-    font-size: 14px;
-    color: rgb(125, 125, 125);
-    text-decoration: none;
-}
-
-
-#error404 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 30vw;
-    letter-spacing: 2px;
-    color: rgb(247,247,247);
-}
-
-#errorbody {
-	text-align: center;
-	padding-left: 0;
+footer p {
+    margin-left: 10vw;
+    font-size: 12px;
+    color: #c6c6c6;
 }
 
 @media (max-width: 600px) {
-	body {
-		padding-left: 64px;
-	}
-
-	h1 {
-		font-size: 8vw;
-		letter-spacing: 0.25vw;
+    
+	.duocontainer {
+        display: block;
+        grid-template-columns: none;
+        margin: 0;
+        width: fit-content;
+        padding: 0;
 	}
 	
-	.graphcontainer {
-    background-color: rgb(22,22,22);
-    width: 76vw;
-    border-radius: 8px;
-    margin: auto;
+	.duocontainer .subcontainer {
+	    width: 80%;
+        height: 80vw;
+	    background-color: rgba(244, 244, 244, .6);  
+	    backdrop-filter: blur(5px);
+	    box-shadow: 0 0 10px rgba(200, 200, 200, .7);
+	    border-radius: 8px;
+        padding: 3vw;
+	    margin: 6vw auto;
+	}
+	
+	.unknown {
+	    display: block;
+	    margin: 24px auto;
+	    width: 100%;
+	    height: auto;
 	}
 
-	.statscontainer {
-    background-color: rgb(22,22,22);
-    width: 76vw;
-    height: fit-content;
-    border-radius: 8px;
-    text-align: center;
-    margin: auto;
+	footer .datacontainer {
+	    display: grid;
+	    grid-template-columns: 50% 50%;
+	    margin: 34px auto;
 	}
 
-	.sidebar {
-    width: 64px;
-	height: 100%;
-    background-color: rgb(16,16,16);
-	position: fixed;
+	.maincontainer {
+	    width: 80%;
+	    height: fit-content;
+	    margin: 0 auto;
+	    padding: 3vw;
+	    background-color: rgba(244, 244, 244, .6);  
+	    backdrop-filter: blur(5px);
+	    box-shadow: 0 0 10px rgba(200, 200, 200, .7);
+	    border-radius: 8px;
 	}
 
-	.sidebar h3 {
-		display: none;
-	}
-
-	.menuimg {
-		display: inline-block;
-		float: none;
-	}
-
-	.titlecontainer {
-    text-align: center;
-    margin: 32px auto auto auto;
-    width: 76vw;
+	.maincontainer .datacontainer {
+	    display: grid;
+        grid-template-columns: 50% 50%;
+        margin-left: 8vw;
 	}
 }
